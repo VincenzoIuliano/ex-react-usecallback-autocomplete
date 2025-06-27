@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import "./App.css";
+import {debounce} from "lodash";
 
 function App() {
   const [query, setQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
-  console.log("suggestions", suggestions);
+  // console.log("suggestions", suggestions);
 
   const fetchProducts = async (query) => {
     if (!query) {
@@ -22,8 +23,13 @@ function App() {
     }
   };
 
+  const debouncedFetchProducts = useCallback(
+    debounce(fetchProducts, 500),
+    []
+  );
+
   useEffect(() => {
-    fetchProducts(query);
+    debouncedFetchProducts(query);
   }, [query]);
 
   return (
