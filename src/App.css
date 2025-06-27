@@ -1,0 +1,53 @@
+/* RESET RULES  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+img {
+  max-width: 100%;
+}
+
+.card {
+  background-color: lightblue;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 1em 0;
+}
+
+.dropdown {
+  background-color: lightgray;
+  max-height: 30vh;
+  overflow: auto;
+  border-radius: 10px;
+  margin-top: 1em;
+}
+
+.dropdown > p {
+  padding: 1em;
+  margin: 0;
+  color: black;
+}
+
+.dropdown > p:hover {
+  background-color: lightblue;
+}
+
+input {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 1em;
+}
